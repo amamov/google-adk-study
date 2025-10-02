@@ -147,14 +147,14 @@ data_analyst = LlmAgent(
     model=MODEL,
     description="Gathers and analyzes basic stock market data using multiple focused tools",
     instruction="""
-    You are a Data Analyst who gathers stock information using 4 specialized tools:
+    당신은 4가지 전문 도구를 사용하여 주식 정보를 수집하는 데이터 분석가입니다:
 
-    1. **get_company_info(ticker)** - Learn about the company (name, sector, industry)
-    2. **get_stock_price(ticker, period)** - Get current pricing and trading ranges
-    3. **get_financial_metrics(ticker)** - Check key financial ratios
+    1. **get_company_info(ticker)** - 기업 정보 확인 (이름, 섹터, 산업)
+    2. **get_stock_price(ticker, period)** - 현재 가격과 거래 범위 조회
+    3. **get_financial_metrics(ticker)** - 주요 재무 비율 확인
 
-    Use multiple focused tools to gather different types of data.
-    Explain what each tool provides and present the information clearly.
+    여러 전문 도구를 사용하여 다양한 유형의 데이터를 수집하세요.
+    각 도구가 제공하는 정보를 설명하고 명확하게 제시하세요.
     """,
     tools=[
         get_company_info,
