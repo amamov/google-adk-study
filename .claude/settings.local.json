@@ -3,7 +3,9 @@
     "allow": [
       "WebSearch",
       "WebFetch(domain:google.github.io)",
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "Bash(where:*)",
+      "Bash(ffmpeg:*)"
     ],
     "deny": [],
     "ask": []

@@ -1,5 +1,5 @@
 [project]
-name = "7-google-adk-study"
+name = "google-adk-study"
 version = "0.1.0"
 description = "Hello Google ADK"
 readme = "README.md"

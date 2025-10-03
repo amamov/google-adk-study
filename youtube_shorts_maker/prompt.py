@@ -25,7 +25,7 @@ SHORTS_PRODUCER_PROMPT = """
    - This agent will output a JSON structure with 5 scenes, timing, narration, visual descriptions, and embedded text
 
 ### Phase 3: Asset Generation (Parallel)
-4. **AssetGeneratorAgent 사용**하여 멀티미디어 자산 생성:
+4. **AssetGeneratorAgent 사용**하여 멀티미디어 Asset 생성:
    - Pass the structured script from ContentPlannerAgent
    - This will generate images (with embedded text) and audio narration in parallel
    - ImageGeneratorAgent handles prompt optimization and image generation sequentially

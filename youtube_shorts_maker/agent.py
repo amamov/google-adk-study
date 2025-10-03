@@ -17,12 +17,20 @@ def before_model_callback(
     callback_context: CallbackContext,
     llm_request: LlmRequest,
 ):
+    """
+    [Note]
+    https://google.github.io/adk-docs/callbacks/#introduction-what-are-callbacks-and-why-use-them
+    callback에 뭘 return하느냐에 따라 모든게 달라진다. (오버라이딩)
+    prompt validation 할때 쓴다고 보면됨
+    """
     # print(callback_context.agent_name)
     history = llm_request.contents
     last_message = history[-1]
     if last_message and last_message.parts and last_message.role == "user":
         text = str(last_message.parts[0].text)
-        if "hummus" in text:
+        if (
+            "hummus" in text
+        ):  # 일종에 예시로 그냥 hummus라고 있으면 보내도록 하는 필터 기능
             return LlmResponse(
                 content=types.Content(
                     parts=[
@@ -31,7 +39,7 @@ def before_model_callback(
                     role="model",
                 )
             )
-    return None
+    return None  # 기본적으로 기본 동작을 허용 한다는 것
 
 
 shorts_producer_agent = Agent(
@@ -45,6 +53,20 @@ shorts_producer_agent = Agent(
         AgentTool(agent=video_assembler_agent),
     ],
     before_model_callback=before_model_callback,
+    #
 )
+
+# shorts_producer_agent = Agent(
+#     name="ShortsProducerAgent",
+#     model=MODEL,
+#     description=SHORTS_PRODUCER_DESCRIPTION,
+#     instruction=SHORTS_PRODUCER_PROMPT,
+#     sub_agents=[
+#         content_planner_agent,
+#         asset_generator_agent,
+#         video_assembler_agent,
+#     ]
+#     before_model_callback=before_model_callback,
+# )
 
 root_agent = shorts_producer_agent

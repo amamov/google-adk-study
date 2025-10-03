@@ -1,3 +1,4 @@
+import os
 from google.genai import types
 from google.adk.tools import ToolContext
 from google.adk.agents import Agent
@@ -7,6 +8,10 @@ from .sub_agents.data_analyst import data_analyst
 from .sub_agents.financial_analyst import financial_analyst
 from .sub_agents.news_analyst import news_analyst
 from .prompt import PROMPT
+from env import OPENAI_API_KEY
+
+
+os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
 
 MODEL = LiteLlm("openai/gpt-4o")
 
@@ -59,4 +64,4 @@ financial_advisor = Agent(
     ],
 )
 
-root_agent = financial_advisor  # 반드시 root_agent 변수에 financial_advisor를 담아야 함
+root_agent = financial_advisor

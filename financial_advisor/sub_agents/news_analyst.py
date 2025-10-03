@@ -21,7 +21,7 @@ news_analyst = Agent(
 
     외부 API를 사용하여 최신 정보를 위한 웹 콘텐츠 검색 및 수집.
     """,
-    output_key="news_analyst_result",
+    output_key="news_analyst_result",  # "news_analyst_result" state 저장
     tools=[
         web_search_tool,
     ],
