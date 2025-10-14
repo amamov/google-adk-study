@@ -48,7 +48,13 @@ root_agent = Agent(
     sub_agents=[
         content_planner_agent,
         asset_generator_agent,
-        # video_assembler_agent,
+        video_assembler_agent,
     ],
     before_model_callback=before_model_callback,
 )
+
+# TODO
+# 1. 맥북으로 FFPEG 돌려보기
+# 2. 다 잘되면 코드 싹다 변경
+# 3. 기존 코드랑 일치하는 게 없도록 싹 다 변경
+# 4. Planner에서 LoopAgent 추가
