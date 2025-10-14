@@ -2,7 +2,7 @@ from google.genai import types
 from google.adk.agents import Agent
 from google.adk.tools.agent_tool import AgentTool
 from google.adk.models.lite_llm import LiteLlm
-from .sub_agents.planner.agent import planner_agent
+from .sub_agents.content_planner.agent import content_planner_agent
 from .sub_agents.content_maker.agent import asset_generator_agent
 from .sub_agents.video_assembler.agent import video_assembler_agent
 from .prompt import SHORTS_PRODUCER_DESCRIPTION, SHORTS_PRODUCER_PROMPT
@@ -45,10 +45,10 @@ root_agent = Agent(
     model=LiteLlm(model="openai/gpt-4o"),
     description=SHORTS_PRODUCER_DESCRIPTION,
     instruction=SHORTS_PRODUCER_PROMPT,
-    tools=[
-        AgentTool(agent=planner_agent),
-        AgentTool(agent=asset_generator_agent),
-        # AgentTool(agent=video_assembler_agent),
+    sub_agents=[
+        content_planner_agent,
+        asset_generator_agent,
+        # video_assembler_agent,
     ],
     before_model_callback=before_model_callback,
 )

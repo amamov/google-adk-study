@@ -28,7 +28,7 @@ class ContentPlanOutput(BaseModel):
     )
 
 
-planner_agent = Agent(
+content_planner_agent = Agent(
     name="ContentPlannerAgent",
     description=CONTENT_PLANNER_DESCRIPTION,
     instruction=CONTENT_PLANNER_PROMPT,
