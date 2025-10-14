@@ -9,12 +9,10 @@ os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
 
 MODEL = LiteLlm("openai/gpt-4o")
 
-
-lina_agent = Agent(
+# 반드시 root_agent 변수에 Agent 인스턴스를 담아야 함
+root_agent = Agent(
     name="lina",
     instruction=PROMPT,
     model=MODEL,
     tools=[],
 )
-
-root_agent = lina_agent  # 반드시 root_agent 변수에 financial_advisor를 담아야 함
