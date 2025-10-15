@@ -45,10 +45,10 @@ root_agent = Agent(
     model=LiteLlm(model="openai/gpt-4o"),
     description=SHORTS_PRODUCER_DESCRIPTION,
     instruction=SHORTS_PRODUCER_PROMPT,
-    sub_agents=[
-        content_planner_agent,
-        asset_generator_agent,
-        video_assembler_agent,
+    tools=[
+        AgentTool(agent=content_planner_agent),
+        AgentTool(agent=asset_generator_agent),
+        AgentTool(agent=video_assembler_agent),
     ],
     before_model_callback=before_model_callback,
 )
