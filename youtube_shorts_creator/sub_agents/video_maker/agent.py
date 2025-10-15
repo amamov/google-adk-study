@@ -5,7 +5,7 @@ from .tools import assemble_video
 
 MODEL = LiteLlm(model="openai/gpt-4o")
 
-video_assembler_agent = Agent(
+video_maker_agent = Agent(
     name="VideoAssemblerAgent",
     model=MODEL,
     description=VIDEO_ASSEMBLER_DESCRIPTION,

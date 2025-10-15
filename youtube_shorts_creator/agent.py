@@ -3,9 +3,9 @@ from google.adk.agents import Agent
 from google.adk.tools.agent_tool import AgentTool
 from google.adk.models.lite_llm import LiteLlm
 from .sub_agents.content_planner.agent import content_planner_agent
-from .sub_agents.content_maker.agent import asset_generator_agent
-from .sub_agents.video_assembler.agent import video_assembler_agent
-from .prompt import SHORTS_PRODUCER_DESCRIPTION, SHORTS_PRODUCER_PROMPT
+from .sub_agents.content_maker.agent import content_maker_agent
+from .sub_agents.video_maker.agent import video_maker_agent
+from .prompt import SHORTS_CREATOR_PROMPT, SHORTS_CREATOR_DESCRIPTION
 from google.adk.agents.callback_context import CallbackContext
 from google.adk.models.llm_request import LlmRequest
 from google.adk.models.llm_response import LlmResponse
@@ -41,20 +41,18 @@ def before_model_callback(
 
 
 root_agent = Agent(
-    name="Shorts_PD_Agent",
+    name="ShortsCreatorAgent",
     model=LiteLlm(model="openai/gpt-4o"),
-    description=SHORTS_PRODUCER_DESCRIPTION,
-    instruction=SHORTS_PRODUCER_PROMPT,
+    description=SHORTS_CREATOR_DESCRIPTION,
+    instruction=SHORTS_CREATOR_PROMPT,
     tools=[
         AgentTool(agent=content_planner_agent),
-        AgentTool(agent=asset_generator_agent),
-        AgentTool(agent=video_assembler_agent),
+        AgentTool(agent=content_maker_agent),
+        AgentTool(agent=video_maker_agent),
     ],
     before_model_callback=before_model_callback,
 )
 
 # TODO
-# 1. 맥북으로 FFPEG 돌려보기
-# 2. 다 잘되면 코드 싹다 변경
-# 3. 기존 코드랑 일치하는 게 없도록 싹 다 변경
-# 4. Planner에서 LoopAgent 추가
+# 1. 기존 코드랑 일치하는 게 없도록 싹 다 변경
+# 2. Planner에서 LoopAgent 추가
