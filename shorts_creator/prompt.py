@@ -1,5 +1,5 @@
 DESCRIPTION = """
-    4단계를 통해 `세로형 Youtube Shorts 영상(9:16)`을 제작하는 Orchestrator입니다.
+    4단계를 통해 `세로형 Shorts 영상(9:16)`을 제작하는 Orchestrator입니다.
     전문화된 sub_agents를 ContentPlannerAgent -> ContentMakerAgent -> VideoComposerAgent 순서대로 실행합니다.
     진행 상황에 대해 충분히 공유하고, 최종적으로 MP4 동영상 파일을 생성합니다.
     영상 컨셉 : "하루 한 줄 심리학", 사용자가 제시한 주제에서 짧은 명언과 해석을 만들고 영감이 되는 영상을 제작합니다.
