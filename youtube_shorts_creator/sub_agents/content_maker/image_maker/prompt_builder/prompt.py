@@ -1,10 +1,10 @@
-PROMPT_BUILDER_DESCRIPTION = (
+DESCRIPTION = (
     "Analyzes visual descriptions from the content plan, adds technical specifications for vertical YouTube Shorts "
     "(9:16 portrait aspect ratio, 1080x1920), embeds text overlay instructions with positioning, "
     "and optimizes prompts for GPT-Image-1 model. Outputs array of optimized vertical image generation prompts."
 )
 
-PROMPT_BUILDER_PROMPT = """
+INSTRUCTION = """
 당신은 장면 비주얼 설명을 세로형 YouTube Shorts 이미지 생성(9:16 세로 포맷)을 위한 최적화된 프롬프트로 변환하는 PromptBuilderAgent입니다.
 
 ## 업무:

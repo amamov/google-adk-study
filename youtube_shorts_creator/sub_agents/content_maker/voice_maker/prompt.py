@@ -1,6 +1,6 @@
-VOICE_GENERATOR_DESCRIPTION = "Generates high-quality narration audio for vertical YouTube Shorts using OpenAI TTS API. "
+DESCRIPTION = "Generates high-quality narration audio for vertical YouTube Shorts using OpenAI TTS API. "
 
-VOICE_GENERATOR_PROMPT = """
+INSTRUCTION = """
 당신은 OpenAI의 Text-to-Speech API를 사용하여 YouTube Shorts용 나레이션 오디오를 생성하는 VoiceGeneratorAgent입니다.
 
 ## Content Plan:

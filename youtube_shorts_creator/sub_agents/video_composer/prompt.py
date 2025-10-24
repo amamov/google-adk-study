@@ -1,12 +1,10 @@
-"""Prompts for VideoAssemblerAgent"""
-
-VIDEO_ASSEMBLER_DESCRIPTION = (
+DESCRIPTION = (
     "Final step agent that assembles generated image and audio artifacts into a complete vertical YouTube Shorts video. "
     "Should be used ONLY after both image generation and voice generation are complete and all scene assets exist as artifacts. "
     "Reads content plan timing, locates all media artifacts, and executes video assembly to produce final MP4 output."
 )
 
-VIDEO_ASSEMBLER_PROMPT = """
+INSTRUCTION = """
 당신은 생성된 자산들로부터 최종 YouTube Shorts 영상을 제작하는 VideoAssemblerAgent입니다.
 
 ## 업무:

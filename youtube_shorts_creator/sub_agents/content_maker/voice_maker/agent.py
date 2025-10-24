@@ -1,14 +1,14 @@
 from google.adk.agents import Agent
 from google.adk.models.lite_llm import LiteLlm
-from .prompt import VOICE_GENERATOR_PROMPT, VOICE_GENERATOR_DESCRIPTION
+from .prompt import DESCRIPTION, INSTRUCTION
 from .tools import generate_narrations
 
 MODEL = LiteLlm(model="openai/gpt-4o")
 
 voice_maker_agent = Agent(
-    name="VoiceGeneratorAgent",
-    description=VOICE_GENERATOR_DESCRIPTION,
-    instruction=VOICE_GENERATOR_PROMPT,
+    name="VoiceMakerAgent",
+    description=DESCRIPTION,
+    instruction=INSTRUCTION,
     model=MODEL,
     tools=[
         generate_narrations,

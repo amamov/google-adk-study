@@ -1,6 +1,6 @@
 from google.adk.agents import Agent
 from google.adk.models.lite_llm import LiteLlm
-from .prompt import CONTENT_PLANNER_DESCRIPTION, CONTENT_PLANNER_PROMPT
+from .prompt import DESCRIPTION, INSTRUCTION
 from pydantic import BaseModel, Field
 from typing import List
 
@@ -30,8 +30,8 @@ class ContentPlanOutput(BaseModel):
 
 content_planner_agent = Agent(
     name="ContentPlannerAgent",
-    description=CONTENT_PLANNER_DESCRIPTION,
-    instruction=CONTENT_PLANNER_PROMPT,
+    description=DESCRIPTION,
+    instruction=INSTRUCTION,
     model=LiteLlm(model="openai/gpt-4o"),
     output_schema=ContentPlanOutput,
     output_key="content_planner_output",
