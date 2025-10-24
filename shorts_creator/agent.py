@@ -20,5 +20,4 @@ root_agent = Agent(
 )
 
 # TODO
-# 1. 기존 코드랑 일치하는 게 없도록 싹 다 변경
-# 2. Planner에서 LoopAgent 추가
+# # 2. Planner에서 LoopAgent 추가

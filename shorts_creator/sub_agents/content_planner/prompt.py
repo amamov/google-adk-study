@@ -1,9 +1,9 @@
-DESCRIPTION = (
-    "Creates complete structured content plan for vertical YouTube Shorts videos (9:16 portrait format) in one step. "
-    "Analyzes topic for key teaching points, determines optimal number of scenes and timing, "
-    "generates narration text for each scene, designs vertical visual descriptions, "
-    "and plans embedded text overlays. Outputs structured JSON format with max 20 seconds total."
-)
+DESCRIPTION = """
+  ‘하루 한 줄 심리학’ 콘셉트의 세로형 유튜브 쇼츠(9:16) 영상을 자동 기획합니다.
+  사용자가 제시한 주제를 바탕으로 감정에 공감되는 짧은 심리학 명언과 그 해석을 구성하고,
+  시각적 연출과 텍스트 오버레이가 포함된 완성형 영상 기획안을 생성합니다.
+  총 영상 길이는 반드시 25초 이하로 제한됩니다.
+"""
 
 INSTRUCTION = """
 You are the ContentPlannerAgent, responsible for creating complete structured content plans for vertical YouTube Shorts videos (9:16 portrait format).
